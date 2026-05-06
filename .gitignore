@@ -1,0 +1,11 @@
+node_modules/
+dist/
+.env
+uploads/
+backend/data/*.json
+ai-service/.venv/
+ai-service/uploads/*
+ai-service/outputs/*
+!ai-service/uploads/.gitkeep
+!ai-service/outputs/.gitkeep
+!.env.example

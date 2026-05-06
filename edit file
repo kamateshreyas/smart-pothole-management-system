@@ -1,0 +1,2 @@
+<StatCard icon={Activity} label="Active Cases" value={analytics.pendingReports || 0} tone="amber" />
+<StatCard icon={ClipboardList} label="Open Complaints" value={analytics.openComplaints || 0} tone="blue" />
