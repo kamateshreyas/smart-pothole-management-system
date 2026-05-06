@@ -11,7 +11,7 @@ export default function Dashboard({ analytics, reports, complaints, alerts, onRe
     <div className="dashboard-grid">
       <section className="hero">
         <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}>
-          <span className="eyebrow">City Fix Command Center</span>
+          <span className="eyebrow">RoadIQ Command Center</span>
           <h1>Detect potholes, prioritize road repairs, and keep traffic moving.</h1>
           <p>
             A single civic dashboard for image-based reporting, GPS mapping, complaint tracking,
@@ -26,7 +26,9 @@ export default function Dashboard({ analytics, reports, complaints, alerts, onRe
 
       <section className="stats-grid">
         <StatCard icon={MapPinned} label="Total Reports" value={analytics.totalReports || 0} tone="mint" />
+        <StatCard icon={Activity} label="Active Cases" value={analytics.pendingReports || 0} tone="amber" />
         <StatCard icon={AlertTriangle} label="High Priority" value={analytics.highPriority || 0} tone="coral" />
+        <StatCard icon={ClipboardList} label="Open Complaints" value={analytics.openComplaints || 0} tone="blue" />
         <StatCard icon={RadioTower} label="Live Alerts" value={analytics.liveAlerts || 0} tone="violet" />
         <StatCard icon={Gauge} label="AI Score" value={`${analytics.avgPriority || 0}%`} tone="green" />
       </section>
@@ -45,7 +47,7 @@ export default function Dashboard({ analytics, reports, complaints, alerts, onRe
           <strong>Repair order</strong>
         </div>
         <div className="report-list scroll-list priority-scroll">
-          {Reports.map((report) => (
+          {reports.map((report) => (
             <ReportCard key={report.id} report={report} onUpdated={onReportUpdated} />
           ))}
         </div>
