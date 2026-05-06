@@ -11,18 +11,35 @@ import trafficRoutes from "./routes/trafficRoutes.js";
 
 export const app = express();
 
-app.use(cors({ origin: config.clientUrl }));
+app.use(
+  cors({
+    origin(origin, callback) {
+      if (!origin || config.clientUrls.includes(origin)) {
+        callback(null, true);
+        return;
+      }
+
+      callback(new Error(`CORS blocked origin: ${origin}`));
+    },
+    credentials: true
+  })
+);
+
 app.use(express.json({ limit: "2mb" }));
 app.use(morgan("dev"));
 app.use("/uploads", express.static(path.resolve(config.uploadDir)));
 
-app.get("/api/health", (_req, res) => {
+function healthCheck(_req, res) {
   res.json({ ok: true, message: "Smart road API is healthy" });
-});
+}
+
+app.get("/health", healthCheck);
+app.get("/api/health", healthCheck);
 
 app.use("/api/reports", reportRoutes);
 app.use("/api/complaints", complaintRoutes);
 app.use("/api/traffic-alerts", trafficRoutes);
 app.use("/api/analytics", analyticsRoutes);
+
 app.use(notFound);
 app.use(errorHandler);

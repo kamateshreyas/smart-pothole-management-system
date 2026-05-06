@@ -13,7 +13,7 @@ export const config = {
     "mongodb+srv://kamateshreyas_db_user:Admin123@cluster0.gqfnjxo.mongodb.net/potholeDB?retryWrites=true&w=majority&appName=Cluster0",
 
   aiServiceUrl:
-    process.env.AI_SERVICE_URL || "http://localhost:8000",
+    process.env.AI_SERVICE_URL || "https://smart-pothole-management-system-1.onrender.com",
 
   uploadDir: "uploads"
 };
