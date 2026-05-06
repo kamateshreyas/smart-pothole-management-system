@@ -7,8 +7,6 @@ import StatusBadge from "../components/StatusBadge.jsx";
 import { formatDate } from "../utils/format.js";
 
 export default function Dashboard({ analytics, reports, complaints, alerts, onReportUpdated }) {
-  const topReports = reports.slice(0, 4);
-
   return (
     <div className="dashboard-grid">
       <section className="hero">
@@ -41,25 +39,25 @@ export default function Dashboard({ analytics, reports, complaints, alerts, onRe
         <MapView reports={reports} />
       </section>
 
-      <section className="panel">
+      <section className="panel scroll-panel">
         <div className="panel-heading">
           <span>Priority Queue</span>
           <strong>Repair order</strong>
         </div>
-        <div className="report-list">
-          {topReports.map((report) => (
+        <div className="report-list scroll-list priority-scroll">
+          {Reports.map((report) => (
             <ReportCard key={report.id} report={report} onUpdated={onReportUpdated} />
           ))}
         </div>
       </section>
 
-      <section className="panel">
+      <section className="panel scroll-panel">
         <div className="panel-heading">
           <span>Citizen Complaints</span>
           <strong>Latest tickets</strong>
         </div>
-        <div className="mini-list">
-          {complaints.slice(0, 5).map((item) => (
+        <div className="mini-list scroll-list compact-scroll">
+          {complaints.map((item) => (
             <article key={item.id}>
               <StatusBadge severity={item.priority}>{item.priority}</StatusBadge>
               <h3>{item.category}</h3>
@@ -70,13 +68,13 @@ export default function Dashboard({ analytics, reports, complaints, alerts, onRe
         </div>
       </section>
 
-      <section className="panel">
+      <section className="panel scroll-panel">
         <div className="panel-heading">
           <span>Traffic Alerts</span>
           <strong>Real-time notices</strong>
         </div>
-        <div className="mini-list">
-          {alerts.slice(0, 5).map((item) => (
+        <div className="mini-list scroll-list compact-scroll">
+          {alerts.map((item) => (
             <article key={item.id}>
               <StatusBadge severity={item.severity}>{item.severity}</StatusBadge>
               <h3>{item.area}</h3>

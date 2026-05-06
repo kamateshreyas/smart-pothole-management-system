@@ -5,9 +5,24 @@
   "scripts": {
     "dev": "vite --host 0.0.0.0",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "cap:init": "cap init RoadIQ com.roadiq.app --web-dir dist",
+    "cap:add:android": "cap add android",
+    "cap:add:ios": "cap add ios",
+    "cap:sync": "npm run build && cap sync",
+    "cap:open:android": "cap open android",
+    "cap:open:ios": "cap open ios"
   },
   "dependencies": {
+    "@capacitor/android": "^7.0.1",
+    "@capacitor/camera": "^7.0.0",
+    "@capacitor/core": "^7.0.1",
+    "@capacitor/geolocation": "^7.1.0",
+    "@capacitor/ios": "^7.0.1",
+    "@capacitor/android": "^8.3.1",
+    "@capacitor/cli": "^8.3.1",
+    "@capacitor/core": "^8.3.1",
+    "@capacitor/ios": "^8.3.1",
     "@vitejs/plugin-react": "^4.3.4",
     "axios": "^1.7.9",
     "framer-motion": "^11.15.0",

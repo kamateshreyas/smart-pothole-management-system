@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">RoadIQ</string>
+    <string name="title_activity_main">RoadIQ</string>
+    <string name="package_name">com.roadiq.app</string>
+    <string name="custom_url_scheme">com.roadiq.app</string>
+</resources>
