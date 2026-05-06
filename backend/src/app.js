@@ -8,19 +8,13 @@ import analyticsRoutes from "./routes/analyticsRoutes.js";
 import complaintRoutes from "./routes/complaintRoutes.js";
 import reportRoutes from "./routes/reportRoutes.js";
 import trafficRoutes from "./routes/trafficRoutes.js";
+import { corsOriginCallback } from "./utils/corsOptions.js";
 
 export const app = express();
 
 app.use(
   cors({
-    origin(origin, callback) {
-      if (!origin || config.clientUrls.includes(origin)) {
-        callback(null, true);
-        return;
-      }
-
-      callback(new Error(`CORS blocked origin: ${origin}`));
-    },
+    origin: corsOriginCallback,
     credentials: true
   })
 );
