@@ -1,4 +1,4 @@
-import {Arrowleft, BarChart3, ClipboardList, MapPinned, Menu, RadioTower, X } from "lucide-react";
+import {ArrowLeft, BarChart3, ClipboardList, MapPinned, Menu, RadioTower, X } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 import Loader from "./components/Loader.jsx";
 import Toast from "./components/Toast.jsx";
@@ -146,7 +146,7 @@ export default function App() {
       <Toast toast={toast} onClose={() => setToast(null)} />
       <aside className={`sidebar ${menuOpen ? "open" : ""}`}>
       <button className="sidebar-back-btn" onclick={()=>setMenuOpen(false)}aria-label="Close sidebar">
-        <Arrowleft size={20}/>
+        <ArrowLeft size={20}/>
         Back
       </button>
         <div className="brand">
