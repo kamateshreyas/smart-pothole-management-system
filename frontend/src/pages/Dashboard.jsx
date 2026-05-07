@@ -26,9 +26,7 @@ export default function Dashboard({ analytics, reports, complaints, alerts, onRe
 
       <section className="stats-grid">
         <StatCard icon={MapPinned} label="Total Reports" value={analytics.totalReports || 0} tone="mint" />
-        <StatCard icon={Activity} label="Active Cases" value={analytics.pendingReports || 0} tone="amber" />
         <StatCard icon={AlertTriangle} label="High Priority" value={analytics.highPriority || 0} tone="coral" />
-        <StatCard icon={ClipboardList} label="Open Complaints" value={analytics.openComplaints || 0} tone="blue" />
         <StatCard icon={RadioTower} label="Live Alerts" value={analytics.liveAlerts || 0} tone="violet" />
         <StatCard icon={Gauge} label="AI Score" value={`${analytics.avgPriority || 0}%`} tone="green" />
       </section>
