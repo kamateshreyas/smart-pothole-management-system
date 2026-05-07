@@ -1,7 +1,7 @@
 {
   "appId": "com.roadiq.app",
   "appName": "RoadIQ",
-  "webDir": "dist",
+  "webDir": "frontend/dist",
   "server": {
     "androidScheme": "https"
   }
