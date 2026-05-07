@@ -14,14 +14,11 @@
     "cap:open:ios": "cap open ios"
   },
   "dependencies": {
-    "@capacitor/android": "^7.0.1",
-    "@capacitor/camera": "^7.0.0",
-    "@capacitor/core": "^7.0.1",
-    "@capacitor/geolocation": "^7.1.0",
-    "@capacitor/ios": "^7.0.1",
     "@capacitor/android": "^8.3.1",
+    "@capacitor/camera": "^7.0.0",
     "@capacitor/cli": "^8.3.1",
     "@capacitor/core": "^8.3.1",
+    "@capacitor/geolocation": "^7.1.0",
     "@capacitor/ios": "^8.3.1",
     "@vitejs/plugin-react": "^4.3.4",
     "axios": "^1.7.9",
@@ -37,6 +34,7 @@
   "devDependencies": {
     "autoprefixer": "^10.4.20",
     "postcss": "^8.4.49",
-    "tailwindcss": "^3.4.17"
+    "tailwindcss": "^3.4.17",
+    "typescript": "^6.0.3"
   }
 }
